@@ -22,6 +22,8 @@
       "@api/*": ["apps/api/src/*"],
       "@common": ["libs/common/src"],
       "@common/*": ["libs/common/src/*"],
+      "@domain": ["libs/domain/src"],
+      "@domain/*": ["libs/domain/src/*"],
       "@database": ["libs/database/src"],
       "@database/*": ["libs/database/src/*"],
       "@auth": ["libs/auth/src"],

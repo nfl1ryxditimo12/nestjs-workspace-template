@@ -10,6 +10,7 @@ module.exports = {
     '.module$',
     '',
     '^@common/(.*)$',
+    '^@domain/(.*)$',
     '^@database/(.*)$',
     '^@auth/(.*)$',
     '',
