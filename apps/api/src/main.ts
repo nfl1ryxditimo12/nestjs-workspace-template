@@ -1,10 +1,13 @@
 import { NestFactory } from '@nestjs/core';
+import { initializeTransactionalContext } from 'typeorm-transactional';
 
 import { AppModule } from '@api/app.module';
 
 import { Environ } from '@common/environ';
 
 (async () => {
+  initializeTransactionalContext();
+
   const app = await NestFactory.create(AppModule);
 
   app.setGlobalPrefix('api');
