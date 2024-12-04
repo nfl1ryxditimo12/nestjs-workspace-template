@@ -1,1 +1,1 @@
-export * from './user.facade';
+export { UserFacade } from './user.facade';
