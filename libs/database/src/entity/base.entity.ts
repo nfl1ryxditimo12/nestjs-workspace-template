@@ -1,5 +1,5 @@
 import { Worker } from 'snowflake-uuid';
-import { CreateDateColumn, DeleteDateColumn, Index, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { CreateDateColumn, DeleteDateColumn, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
 const worker = new Worker();
 
@@ -8,7 +8,6 @@ export class BaseEntity {
   id: string = worker.nextId().toString();
 
   @CreateDateColumn({ name: 'created_at', type: 'timestamp' })
-  @Index()
   createdAt: Date;
 
   @UpdateDateColumn({ name: 'updated_at', type: 'timestamp' })
