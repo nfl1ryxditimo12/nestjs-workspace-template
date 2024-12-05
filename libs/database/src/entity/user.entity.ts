@@ -1,7 +1,7 @@
-import { Column, Entity } from 'typeorm';
+import { Column, Entity, OneToMany } from 'typeorm';
 
 import { AccountRole } from '@domain/user';
-import { BaseEntity } from '@database/entity';
+import { AuthorizationEntity, BaseEntity, CartEntity, OrderEntity, ProductEntity } from '@database/entity';
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
@@ -13,4 +13,16 @@ export class UserEntity extends BaseEntity {
 
   @Column({ type: 'enum', enum: AccountRole })
   role: AccountRole;
+
+  @OneToMany(() => AuthorizationEntity, (authorizationEntity) => authorizationEntity.userEntity)
+  authorizationEntities: AuthorizationEntity[];
+
+  @OneToMany(() => ProductEntity, (productEntity) => productEntity.userEntity)
+  productEntities: ProductEntity[];
+
+  @OneToMany(() => CartEntity, (cartEntity) => cartEntity.userEntity)
+  cartEntities: ProductEntity[];
+
+  @OneToMany(() => OrderEntity, (orderEntity) => orderEntity.userEntity)
+  orderEntities: ProductEntity[];
 }
