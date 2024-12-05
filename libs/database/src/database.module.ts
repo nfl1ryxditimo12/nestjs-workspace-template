@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import { addTransactionalDataSource } from 'typeorm-transactional';
 
-import { Environ } from '@common/environ';
+import { Environ } from '@common/util';
 import { DatabaseProvider } from '@database/database.provider';
 import {
   AuthorizationRepository,

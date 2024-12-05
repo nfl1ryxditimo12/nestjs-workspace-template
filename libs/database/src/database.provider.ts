@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
 
-import { Environ } from '@common/environ';
+import { Environ } from '@common/util';
 import { AuthorizationEntity, CartEntity, OrderEntity, ProductEntity, UserEntity } from '@database/entity';
 
 @Injectable()

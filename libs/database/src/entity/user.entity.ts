@@ -5,7 +5,7 @@ import { AuthorizationEntity, BaseEntity, CartEntity, OrderEntity, ProductEntity
 
 @Entity('users')
 export class UserEntity extends BaseEntity {
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', unique: true })
   username: string;
 
   @Column({ type: 'varchar' })
