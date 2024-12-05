@@ -6,7 +6,13 @@ import { addTransactionalDataSource } from 'typeorm-transactional';
 
 import { Environ } from '@common/environ';
 import { DatabaseProvider } from '@database/database.provider';
-import { UserRepository } from '@database/repository';
+import {
+  AuthorizationRepository,
+  CartRepository,
+  OrderRepository,
+  ProductRepository,
+  UserRepository,
+} from '@database/repository';
 
 @Module({
   imports: [
@@ -29,7 +35,7 @@ import { UserRepository } from '@database/repository';
       },
     }),
   ],
-  providers: [UserRepository],
-  exports: [UserRepository],
+  providers: [UserRepository, AuthorizationRepository, ProductRepository, CartRepository, OrderRepository],
+  exports: [UserRepository, AuthorizationRepository, ProductRepository, CartRepository, OrderRepository],
 })
 export class DatabaseModule {}
